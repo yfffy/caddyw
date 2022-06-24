@@ -8,9 +8,9 @@ else
     git config --local user.name 'GitHub Action'
     git config --local user.email 'action@github.com'
     go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
-    for arch in amd64 arm64
+    for arch in amd64
     do
-        env GOOS=linux GOARCH=${arch} xcaddy build latest \
+        env GOOS=windows GOARCH=${arch} xcaddy build latest \
         --with github.com/caddy-dns/cloudflare \
         --with github.com/mholt/caddy-l4 \
         --with github.com/mholt/caddy-webdav \
